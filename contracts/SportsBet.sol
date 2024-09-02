@@ -243,7 +243,7 @@ contract SportsBetting {
         userWithSelection[i].name = bet.userSelections[bet.userIds[i]].name;
         userWithSelection[i].photoUrl = bet.userSelections[bet.userIds[i]].photoUrl;
         userWithSelection[i].walletAddress = bet.userSelections[bet.userIds[i]].walletAddress;
-        if (bet.userSelections[bet.userIds[i]].walletAddress == msg.sender) {
+        if (bet.userSelections[bet.userIds[i]].walletAddress == msg.sender || bet.status > 0) {
              userWithSelection[i].selections = bet.userSelections[bet.userIds[i]].selections;
         }else{
             userWithSelection[i].selections = new Selection[](0);
